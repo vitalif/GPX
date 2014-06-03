@@ -1407,7 +1407,7 @@ static int home_axes(Gpx *gpx, unsigned axes, unsigned direction)
     // time between steps for longest axis = microseconds / longestStep
     unsigned step_delay = (unsigned)round(microseconds / longestAxis);
     
-    gpx->accumulated.time += distance / feedrate * 60;
+    //gpx->accumulated.time += distance / feedrate * 60;
 
     begin_frame(gpx);
 
@@ -1490,7 +1490,7 @@ static int set_nozzle_temperature(Gpx *gpx, unsigned extruder_id, unsigned tempe
     
     double tDelta = (double)temperature - (double)gpx->tool[extruder_id].nozzle_temperature - AMBIENT_TEMP;
     if(tDelta > 0.0) {
-        gpx->accumulated.time += tDelta * NOZZLE_TIME;
+        //gpx->accumulated.time += tDelta * NOZZLE_TIME;
     }
     
     begin_frame(gpx);
@@ -1591,7 +1591,7 @@ static int set_build_platform_temperature(Gpx *gpx, unsigned extruder_id, unsign
 
     double tDelta = (double)temperature - (double)gpx->tool[extruder_id].build_platform_temperature - AMBIENT_TEMP;
     if(tDelta > 0.0) {
-        gpx->accumulated.time += tDelta * HBP_TIME;
+        //gpx->accumulated.time += tDelta * HBP_TIME;
     }
     
     begin_frame(gpx);
